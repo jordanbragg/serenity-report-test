@@ -1,5 +1,5 @@
 ext {
-    serenity_version = "1.1.25"
+    serenity_version = "1.1.28"
 }
 
 buildscript {
@@ -8,7 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.25")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.28")
     }
 }
 
