@@ -1,0 +1,44 @@
+ext {
+    serenity_version = "1.1.25"
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.25")
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: "net.serenity-bdd.aggregator"
+
+
+dependencies {
+    compile "net.serenity-bdd:serenity-core:$serenity_version"
+    compile "net.serenity-bdd:serenity-junit:$serenity_version"
+    compile 'org.codehaus.groovy:groovy-all:2.3.10'
+    compile 'junit:junit:4.12'
+}
+
+//serenity {
+//    outputDirectory "${projectDir.absolutePath}/build/reports/tests/"
+//}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+    systemProperties System.getProperties()
+}
+
+// not failing at first but executing all tests
+//gradle.startParameter.continueOnFailure = true
