@@ -1,5 +1,5 @@
 ext {
-    serenity_version = "1.1.29-SNAPSHOT"
+    serenity_version = "1.1.28"
 }
 
 buildscript {
@@ -8,7 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.29-SNAPSHOT")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.28")
     }
 }
 
@@ -25,6 +25,7 @@ apply plugin: "net.serenity-bdd.aggregator"
 dependencies {
     compile "net.serenity-bdd:serenity-core:$serenity_version"
     compile "net.serenity-bdd:serenity-junit:$serenity_version"
+    compile "net.serenity-bdd:serenity-spring:$serenity_version"
     compile 'org.codehaus.groovy:groovy-all:2.3.10'
     compile 'junit:junit:4.12'
 }
