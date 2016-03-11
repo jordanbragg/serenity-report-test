@@ -17,8 +17,6 @@ public class TestReportWithParameterTest {
 
     @Steps
     TestSteps testSteps;
-    @Managed
-    public WebDriver driver;
 
     private String name;
     private String description;
@@ -29,14 +27,14 @@ public class TestReportWithParameterTest {
     }
 
     @Test
-    public void name_responds_with_description() {
+    public void name_responds_with_description_use_csv() {
         testSteps.given_name(name);
         testSteps.when_name_asked_question(name);
         testSteps.then_description_provided(description);
     }
 
     @Test
-    public void name_responds_with_description2() {
+    public void name_responds_with_description2_use_csv() {
         testSteps.given_name(name);
         testSteps.given_name(name);
         testSteps.when_name_asked_question(name);

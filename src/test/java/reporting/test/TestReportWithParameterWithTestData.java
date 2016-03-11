@@ -16,7 +16,7 @@ import java.util.Collection;
 
 @RunWith(SerenityParameterizedRunner.class)
 @Narrative(text = {"As a user", "I want to ask for a description", "In order to do a test"})
-public class TestReportWithParameterTest2 {
+public class TestReportWithParameterWithTestData {
 
     @TestData
     public static Collection<Object[]> testData(){
@@ -31,13 +31,11 @@ public class TestReportWithParameterTest2 {
 
     @Steps
     TestSteps testSteps;
-    @Managed
-    public WebDriver driver;
 
     private String name;
     private String description;
 
-    public TestReportWithParameterTest2(String name, String description){
+    public TestReportWithParameterWithTestData(String name, String description){
         this.name = name;
         this.description = description;
     }
@@ -48,14 +46,14 @@ public class TestReportWithParameterTest2 {
     }
 
     @Test
-    public void name_responds_with_description() {
+    public void name_responds_with_description_use_test_data() {
         testSteps.given_name(name);
         testSteps.when_name_asked_question(name);
         testSteps.then_description_provided(description);
     }
 
     @Test
-    public void name_responds_with_description2() {
+    public void name_responds_with_description2_use_test_data() {
         testSteps.given_name(name);
         testSteps.given_name(name);
         testSteps.when_name_asked_question(name);
